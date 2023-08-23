@@ -32,6 +32,7 @@ class UserManager(BaseUserManager):
         )
         user.is_active = True  # Set is_active to True for superuser
         user.is_admin = True
+        user.is_staff = True #remove this if the admin panel is giving staff error with valid credentials it may solve problem
         user.save(using=self._db)
         return user
 
